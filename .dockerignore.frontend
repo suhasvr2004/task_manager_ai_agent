@@ -1,0 +1,6 @@
+# Frontend-specific dockerignore
+backend/
+tests/
+*.md
+!README.md
+
