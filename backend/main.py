@@ -11,17 +11,41 @@ from backend.config import get_settings
 from backend.database.client import DatabaseManager
 from backend.api.routes import router
 from backend.services.reminder_scheduler import get_reminder_scheduler
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+
+app = FastAPI()   # ✅ MUST be before any app.add_middleware
+
+# ---------------- CORS SETTINGS ----------------
+origins = [
+    "*",
+    "http://localhost:8501",
+    "https://taskmanageraiagent.streamlit.app"
+]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "https://taskmanageraiagent.streamlit.app"
-    ],
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# ---------------- ROUTES ----------------
+@app.get("/")
+def root():
+    return {"message": "Backend working!"}
+
+@app.get("/tasks")
+def get_tasks():
+    return {"message": "task list test"}
+    
+
+# ---------------- UVICORN ENTRY ----------------
+if __name__ == "__main__":
+    import uvicorn
+    import os
+    uvicorn.run(app, host="0.0.0.0", port=int(os.getenv("PORT", 8000)))
 
 # Configure logger - only log warnings and errors in production
 settings = get_settings()
