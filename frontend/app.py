@@ -14,7 +14,7 @@ load_dotenv()
 # Page config
 st.set_page_config(
     page_title="Task Manager Agent",
-    page_icon="✅",
+    page_icon="🤖",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -601,4 +601,4 @@ elif page == "🔔 Notifications":
 
 # Footer
 st.sidebar.markdown("---")
-st.sidebar.info("🤖 Powered by LangChain + FastAPI")
+st.sidebar.info("Powered by LangChain + FastAPI")
