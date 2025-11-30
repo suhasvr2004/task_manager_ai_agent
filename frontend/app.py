@@ -3,6 +3,12 @@ import os
 import sys
 import time
 from dotenv import load_dotenv
+import requests
+
+BACKEND_URL = st.secrets["BACKEND_URL"]
+
+response = requests.get(f"{BACKEND_URL}/tasks")
+st.write(response.json())
 
 # Add project root to path for imports (for pages to work)
 project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
