@@ -11,6 +11,17 @@ from backend.config import get_settings
 from backend.database.client import DatabaseManager
 from backend.api.routes import router
 from backend.services.reminder_scheduler import get_reminder_scheduler
+from fastapi.middleware.cors import CORSMiddleware
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "https://taskmanageraiagent.streamlit.app"
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Configure logger - only log warnings and errors in production
 settings = get_settings()
