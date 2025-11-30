@@ -130,3 +130,13 @@ if __name__ == "__main__":
         reload=True if settings.DEBUG else False,
         log_level=settings.LOG_LEVEL.lower()
     )
+
+@app.get("/tasks")
+async def get_tasks():
+    return {
+        "tasks": [
+            {"id": 1, "title": "Task 1", "completed": False},
+            {"id": 2, "title": "Task 2", "completed": True}
+        ]
+    }
+
