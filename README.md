@@ -7,7 +7,7 @@ Built with **FastAPI**, **Streamlit**, **LangChain**, **Supabase**, and **Chroma
 
 ##  **Features**
 
-### ** Core Functionality**
+### **Core Functionality**
 
 * **AI-Powered Task Management** — Create and update tasks using natural language.
 * **Conversational Task Agent** — Chat with an intelligent agent to manage tasks.
@@ -20,7 +20,7 @@ Built with **FastAPI**, **Streamlit**, **LangChain**, **Supabase**, and **Chroma
 * **Reminders** — Automated reminder scheduling.
 * **Calendar Integration Ready** — Google Calendar–ready schema.
 
-### ** User Interface**
+### **User Interface**
 
 * **Interactive Dashboard** — task stats, recent activity, quick actions.
 * **Task Creation Form** — intuitive UI for task input.
@@ -147,7 +147,7 @@ Frontend → **[http://localhost:8501](http://localhost:8501)**
 
 ## 📖 **Usage**
 
-### ** AI Agent — Example Commands**
+### **AI Agent — Example Commands**
 
 * Create tasks:
 
